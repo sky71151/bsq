@@ -112,7 +112,7 @@ int	get_line_lenght(char *file, int line_number)
 int	check_all_lines_lenght(char *file, board_settings *settings)
 {
 	board_settings	setup;
-	int			index_lines;
+	//int			index_lines;
 	int			index_rows;
 
 	index_lines = 0;
