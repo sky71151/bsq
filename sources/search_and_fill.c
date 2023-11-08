@@ -92,7 +92,7 @@ int can_place_square(int x, int y, int size,board_settings *board) {
             }
         }
     }
-    return (size > 0);
+    return (size > 0 && (size > 1 || board->board[x][y] != board->obstacle));
     //return 1;
 }
 
