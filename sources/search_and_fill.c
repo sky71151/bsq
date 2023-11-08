@@ -39,6 +39,7 @@ int	fill_board(char *file, int filesize, board_settings *settings)
 			if (c == '\n')
 				c = file[horizontal + vertical + skipparams + 1];
 			if (!(c == settings->empty || c == settings->obstacle))
+                printf("fout in char");
 				return (-1);
 			line[horizontal] = c;
 			horizontal++;
