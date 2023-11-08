@@ -96,7 +96,7 @@ void find_biggest_square(board_settings *settings) {
 
     for (int i = max_x; i < max_x + max_size; i++) {
         for (int j = max_y; j < max_y + max_size; j++) {
-            map->grid[i][j] = map->full;
+            settings->board[i][j] = settings->fill;
         }
     }
 }
