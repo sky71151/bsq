@@ -42,7 +42,7 @@ void init_board(board_settings *settings)
 	settings->board[i] = 0; 
 }
 
-void free_board()
+void free_board(char *file)
 {
 	int i;
 	
@@ -54,6 +54,7 @@ void free_board()
 	}
 	free(settings->board);
 	free(settings);
+	free(file);
 }
 
 int	main(int argc, char **argv)
@@ -82,16 +83,13 @@ int	main(int argc, char **argv)
 		if (!check_map_valid(argv[index], settings))
 		{
 			write(2, "map error\n", 10);
+			free_board(file);
 			return (0);	
 		}
 		index++;
 	}
 	init_board(settings);
 	search_and_fill(file,fs,settings);
-	//printf("\n\n");
-	//for(int i = 0;i<settings->rows;i++)
-		//printf("%s\n", settings->board[i]);
-	free(file);
-	free_board();
+	free_board(file);
 	return (0);
 }
