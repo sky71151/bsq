@@ -14,7 +14,6 @@
 #include "ft_filehandeling.h"
 #include "search_and_fill.h"
 #include "ft_filereader.h"
-#include "ft_board.h"
 #include "ft_valid.h"
 #include <unistd.h>
 #include <stdlib.h>
