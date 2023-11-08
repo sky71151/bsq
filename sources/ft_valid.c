@@ -127,7 +127,7 @@ int	check_all_lines_lenght(char *file, board_settings *settings)
 		{
 			if (line[line_lenght] != settings->empty && line[line_lenght] != settings->obstacle)
 			{
-				printf("erroooor");
+				printf("erroooor %d ", line[line_lenght]);
 				free(line);
 				return (0);
 			}
