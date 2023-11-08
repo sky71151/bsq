@@ -83,8 +83,8 @@ void find_biggest_square(board_settings *board) {
                 size++;
             }
 
-            if (size - 1 > max_size) {
-                max_size = size - 1;
+            if (size > max_size) {
+                max_size = size;
                 max_x = x;
                 max_y = y;
             }
@@ -99,7 +99,7 @@ void find_biggest_square(board_settings *board) {
 }
 
 void print_grid(board_settings *board) {
-    for (int i = 1; i <= board->rows; i++) {
+    for (int i = 0; i < board->rows; i++) {
         printf("%s\n", board->board[i]);
     }
 }
