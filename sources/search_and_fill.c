@@ -83,7 +83,7 @@ void find_biggest_square(board_settings *board) {
                 size++;
             }
 
-            if (size - 1 > max_size) {
+            if (size > max_size) {
                 max_size = size;
                 max_x = x;
                 max_y = y;
