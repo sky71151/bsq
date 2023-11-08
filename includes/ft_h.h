@@ -12,12 +12,6 @@
 #ifndef FT_H_H
 # define FT_H_H
 
-typedef struct board
-{
-	char	**board;
-	int		obstacles;
-}	t_map;
-
 typedef struct setup
 {
 	int		rows;
@@ -25,6 +19,7 @@ typedef struct setup
 	char	empty;
 	char	obstacle;
 	char	fill;
+	char	**board;
 }	board_settings;
 
 

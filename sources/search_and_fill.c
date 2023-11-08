@@ -13,6 +13,7 @@ int search_and_fill(char *file, int filesize, board_settings *settings)
     fill_board(file,filesize,settings);
     find_biggest_square(settings);
     print_grid(settings);
+    return (1);
 }
 
 
@@ -57,7 +58,7 @@ int can_place_square(int x, int y, int size,board_settings *board) {
     }
 
     for (int i = x; i < x + size; i++) {
-        if (strlen(board->board[i]) - y < size) {
+        if (board->line_lenght- y < size) {
             return 0;
         }
 
@@ -76,7 +77,7 @@ void find_biggest_square(board_settings *board) {
     int max_y = 0;
 
     for (int x = 0; x < board->rows; x++) {
-        for (int y = 0; y < strlen(board->board[x]); y++) {
+        for (int y = 0; y < board->line_lenght; y++) {
             int size = 1;
             while (can_place_square(x, y, size, board)) {
                 size++;

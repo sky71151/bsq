@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 SRC_DIR = sources
 INC_DIR = includes
-SRCS =  ft_atoi.c ft_valid2.c ft_valid.c ft_filereader.c ft_filehandeling.c ft_board.c main.c
+SRCS =  ft_atoi.c ft_valid2.c search_and_fill.c ft_valid.c ft_filereader.c ft_filehandeling.c ft_board.c main.c
 OBJS = $(addprefix $(SRC_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)

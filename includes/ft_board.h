@@ -14,7 +14,7 @@
 # define FT_BOARD_H
 #include "ft_h.h"
 
-int	fill_board(char *file, int filesize, board_settings *settings, t_map *field);
+int	fill_board(char *file, int filesize, board_settings *settings);
 
 #endif
 
