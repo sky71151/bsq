@@ -11,7 +11,7 @@
 int search_and_fill(char *file, int filesize, board_settings *settings)
 {
     if(fill_board(file,filesize,settings) == 0)
-        return (-1);
+        exit (-1);
     find_biggest_square(settings);
     print_grid(settings);
     return (1);
@@ -39,7 +39,7 @@ int	fill_board(char *file, int filesize, board_settings *settings)
 			if (c == '\n')
 				c = file[horizontal + vertical + skipparams + 1];
 			if (!(c == settings->empty || c == settings->obstacle))
-				return (-1);
+				exit (-1);
 			line[horizontal] = c;
 			horizontal++;
 		}
