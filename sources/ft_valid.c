@@ -112,19 +112,33 @@ int	get_line_lenght(char *file, int line_number)
 int	check_all_lines_lenght(char *file, board_settings *settings)
 {
 	board_settings	setup;
-	//int			index_lines;
 	int			index_rows;
+	int		line_lenght;
+	char	*line;
 
-	//index_lines = 0;
-	index_rows = 2;
+	line_lenght = 0;
+	index_rows = 1;
 	setup = *settings;
 	while (index_rows < (setup.rows + 1))
 	{	
-		if (get_line_lenght (file, index_rows) != setup.line_lenght)
+		line_lenght = 0;	
+		line = readline(file, index_rows);
+		while (line[line_lenght] != '\0' )
+		{
+			if (line[line_lenght] != settings->empty && line[line_lenght] != settings->obstacle)
+			{
+				free(line);
+				return (-1);
+			}
+			line_lenght++;
+		}
+		
+		free(line);
+		/*if (get_line_lenght (file, index_rows) != setup.line_lenght)
 		{	
 			return (-1);
 		}
-		index_rows++;
+		index_rows++;*/
 	}	
 	return (1);
 }
