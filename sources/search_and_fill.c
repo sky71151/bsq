@@ -53,15 +53,11 @@ int	fill_board(char *file, int filesize, board_settings *settings)
 
 
 int can_place_square(int x, int y, int size,board_settings *board) {
-    if (x + size > board->rows) {
+    if (x + size > board->rows || y + size > board->line_lenght) {
         return 0;
     }
 
     for (int i = x; i < x + size; i++) {
-        if (board->line_lenght- y < size) {
-            return 0;
-        }
-
         for (int j = y; j < y + size; j++) {
             if (board->board[i][j] == board->obstacle) {
                 return 0;
