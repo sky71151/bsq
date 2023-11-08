@@ -122,7 +122,7 @@ int	check_all_lines_lenght(char *file, board_settings *settings)
 	while (index_rows < (setup.rows + 1))
 	{	
 		line_lenght = 0;	
-		line = readline(file, index_rows);
+		line = readline(file, index_rows++);
 		while (line[line_lenght] != '\0' )
 		{
 			if (line[line_lenght] != settings->empty && line[line_lenght] != settings->obstacle)
