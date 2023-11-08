@@ -92,7 +92,10 @@ int can_place_square(int x, int y, int size,board_settings *board) {
             }
         }
     }
-    return (size > 1 || (size == 1 && board->board[x][y] == board->empty));
+
+    if (size == 1 && board->board[x][y] == board->empty)
+        return (0);
+    return 1;
     //return 1;
 }
 
