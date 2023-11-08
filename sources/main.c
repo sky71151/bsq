@@ -89,7 +89,8 @@ int	main(int argc, char **argv)
 		index++;
 	}
 	init_board(settings);
-	search_and_fill(file,fs,settings);
+	if (!search_and_fill(file,fs,settings))
+		write(2, "map error\n", 10);
 	free_board(file);
 	return (0);
 }
