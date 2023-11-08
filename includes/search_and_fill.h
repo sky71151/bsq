@@ -19,6 +19,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 
+int	fill_board(char *file, int filesize, board_settings *settings);
 int can_place_square(int x, int y, int size,board_settings *board);
 void find_biggest_square(board_settings *board);
 void print_grid(board_settings *board);
