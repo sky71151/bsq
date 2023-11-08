@@ -55,5 +55,12 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.associations": {
+    "ft_board.h": "c",
+    "search_and_fill.h": "c",
+    "ft_filereader.h": "c",
+    "ft_filehandeling.h": "c",
+    "stdlib.h": "c"
+  }
 }
