@@ -92,7 +92,8 @@ int can_place_square(int x, int y, int size,board_settings *board) {
             }
         }
     }
-    return 1;
+    return (size > 0);
+    //return 1;
 }
 
 
