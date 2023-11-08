@@ -58,7 +58,7 @@ int can_place_square(int x, int y, int size,board_settings *board) {
     }
 
     for (int i = x; i < x + size; i++) {
-        if (strlen(board->board[i])- y < size) {
+        if (board->line_lenght- y < size) {
             return 0;
         }
 
@@ -78,7 +78,7 @@ void find_biggest_square(board_settings *settings) {
     int max_y = 0;
 
     for (int x = 0; x < settings->rows; x++) {
-        for (int y = 0; y < strlen(settings->board[x]); y++) {
+        for (int y = 0; y < settings->line_lenght; y++) {
             if (settings->board[x][y] != settings->obstacle) {
                 int size = 1;
                 while (can_place_square(x, y, size, settings)) {
