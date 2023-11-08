@@ -58,7 +58,7 @@ int can_place_square(int x, int y, int size,board_settings *board) {
     }
 
     for (int i = x; i < x + size; i++) {
-        if (board->line_lenght- y < size) {
+        if (strlen(board->board[i])- y < size) {
             return 0;
         }
 
@@ -71,6 +71,43 @@ int can_place_square(int x, int y, int size,board_settings *board) {
     return 1;
 }
 
+
+void find_biggest_square(board_settings *settings) {
+    int max_size = 0;
+    int max_x = 0;
+    int max_y = 0;
+
+    for (int x = 0; x < settings->rows; x++) {
+        for (int y = 0; y < strlen(settings->board[x]); y++) {
+            if (settings->board[x][y] != settings->obstacle) {
+                int size = 1;
+                while (can_place_square(x, y, size, settings)) {
+                    size++;
+                }
+
+                if (size > max_size) {
+                    max_size = size;
+                    max_x = x;
+                    max_y = y;
+                }
+            }
+        }
+    }
+
+    for (int i = max_x; i < max_x + max_size; i++) {
+        for (int j = max_y; j < max_y + max_size; j++) {
+            map->grid[i][j] = map->full;
+        }
+    }
+}
+
+
+
+
+
+
+
+/*
 void find_biggest_square(board_settings *board) {
     int max_size = 0;
     int max_x = 0;
@@ -96,7 +133,7 @@ void find_biggest_square(board_settings *board) {
             board->board[i][j] = board->fill;
         }
     }
-}
+}*/
 
 void print_grid(board_settings *board) {
     for (int i = 0; i < board->rows; i++) {
