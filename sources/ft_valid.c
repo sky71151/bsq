@@ -115,7 +115,7 @@ int	check_all_lines_lenght(char *file, board_settings *settings)
 	//int			index_lines;
 	int			index_rows;
 
-	index_lines = 0;
+	//index_lines = 0;
 	index_rows = 2;
 	setup = *settings;
 	while (index_rows < (setup.rows + 1))
