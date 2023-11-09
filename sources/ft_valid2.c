@@ -21,17 +21,15 @@
 
 int	check_printable(board_settings *settings)
 {
-	board_settings	set;
-
-	set = *settings;
-	if (set.empty < 32 || set.empty > 126)
-		return (-1);
-	if (set.obstacle < 32 || set.obstacle > 126)
-		return (-1);
-	if (set.fill < 32 || set.fill > 126)
-		return (-1);
-	if (set.empty == set.fill || set.empty == set.obstacle
-		|| set.fill == set.obstacle)
-		return (-1);
+	
+	if (settings->empty < 32 || settings->empty > 126)
+		return (0);
+	if (settings->obstacle < 32 || settings->obstacle > 126)
+		return (0);
+	if (settings->fill < 32 || settings->fill > 126)
+		return (0);
+	if (settings->empty == settings->fill || settings->empty == settings->obstacle
+		|| settings->fill == settings->obstacle)
+		return (0);
 	return (1);
 }
