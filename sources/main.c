@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 		if (check_map_valid(argv[index], settings) == 0)
 		{
 			write(2, "map error\n", 10);
-			free_board(file);
+			free(file);
 			return (0);	
 		}
 		index++;
