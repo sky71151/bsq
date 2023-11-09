@@ -27,22 +27,22 @@ int	check_map_valid(char *filename, board_settings *settings)
 	if (!file)
 	{
 		free(file);
-		return (-1);
+		return (0);
 	}
 	if (!check_first_line(file, settings))
 	{
 		free(file);
-		return (-1);
+		return (0);
 	}
-	if (!check_printable(settings))
+	if (check_printable(settings) == 0)
 	{	
 		free(file);
-		return (-1);
+		return (0);
 	}
 	if (!check_all_lines_lenght (file, settings))
 	{	
 		free(file);
-		return (-1);
+		return (0);
 	}
 	free(file);
 	return (1);

@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 	//printf("%i\n",ls);
 	while (index < argc)
 	{
-		if (!check_map_valid(argv[index], settings))
+		if (check_map_valid(argv[index], settings) == 0)
 		{
 			write(2, "map error\n", 10);
 			free_board(file);
