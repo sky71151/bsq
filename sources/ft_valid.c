@@ -29,7 +29,7 @@ int	check_map_valid(char *filename, board_settings *settings)
 		free(file);
 		return (0);
 	}
-	if (!check_first_line(file, settings))
+	if (check_first_line(file, settings) == 0)
 	{
 		free(file);
 		return (0);
@@ -39,7 +39,7 @@ int	check_map_valid(char *filename, board_settings *settings)
 		free(file);
 		return (0);
 	}
-	if (!check_all_lines_lenght (file, settings))
+	if (check_all_lines_lenght (file, settings) == 0)
 	{	
 		free(file);
 		return (0);
